@@ -1,5 +1,3 @@
-npm install --save @nestjs/typeorm typeorm pg
-npm i bcrypt
 
 # TODO https://docs.docker.com/engine/reference/commandline/ps/
 

@@ -40,4 +40,13 @@ export class UserService {
             throw error; // Rethrow other errors
         }
     }
+
+    async findOneWithUserName(userName: string) {
+        console.log(userName);
+        const user = await this.userRepo.findOne({ where: { email: userName } });
+        console.log("User service");
+        console.log(user);
+        console.log("------------");
+        return user
+    }
 }

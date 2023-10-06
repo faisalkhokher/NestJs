@@ -1,0 +1,16 @@
+npm install --save @nestjs/typeorm typeorm pg
+
+npm i bcrypt
+
+# For Auth
+npm i  --save @nestjs/jwt passport-jwt 
+npm i --save-dev @types/passport-jwt
+
+npm i  --save @nestjs/passport passport passport-local
+npm i --save-dev @types/passport-local
+
+
+npm install @nestjs/passport passport passport-local passport-jwt bcrypt jsonwebtoken
+
+
+nest generate class entities/abc --no-spec
