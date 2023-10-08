@@ -1,16 +1,18 @@
-npm install --save @nestjs/typeorm typeorm pg
-
+npm i -g @nestjs/cli
+nest new fullstackbook-nestjs-jwt
+npm install --save @nestjs/passport passport passport-local
+npm install --save-dev @types/passport-local
+nest g module auth
+nest g service auth
+nest g module users
+nest g service users
+createdb fullstackbook-nestjs-jwt
+npm i --save @nestjs/config @nestjs/typeorm typeorm pg
+npx typeorm migration:create src/migration/create-users-table
+npx typeorm migration:create src/migration/create-roles-table
+npx typeorm migration:create src/migration/create-users-to-roles-table
+npx typeorm migration:create src/migration/insert-roles
+npm run typeorm migration:run
+npm run typeorm migration:revert
 npm i bcrypt
-
-# For Auth
-npm i  --save @nestjs/jwt passport-jwt 
-npm i --save-dev @types/passport-jwt
-
-npm i  --save @nestjs/passport passport passport-local
-npm i --save-dev @types/passport-local
-
-
-npm install @nestjs/passport passport passport-local passport-jwt bcrypt jsonwebtoken
-
-
-nest generate class entities/abc --no-spec
+npm i -D @types/bcrypt

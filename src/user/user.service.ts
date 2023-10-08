@@ -45,8 +45,6 @@ export class UserService {
         console.log(userName);
         const user = await this.userRepo.findOne({ where: { email: userName } });
         console.log("User service");
-        console.log(user);
-        console.log("------------");
         return user
     }
 }

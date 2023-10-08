@@ -22,10 +22,12 @@ export class UserController {
      * 
     */
     @Post()
-    async createUser(@Res() res, @Body() createUserDto: CreateUserDto) {
+    async createUser(@Res() res:any, @Body() createUserDto: CreateUserDto) {
         const userCreate = this.userservice.createUser(createUserDto);
         return userCreate.then((result) => {
-            return result;
+            console.log("Creating...");
+            console.log(result);
+            return res.json(result);
         }).catch((err) => {
             return res.status(200).json(
                 {
